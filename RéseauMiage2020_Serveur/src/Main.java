@@ -3,8 +3,14 @@ public class Main {
         Metier1 m1= new Metier1();
         Comprehension c = new Comprehension(m1);
         int port = 28414;
-        TCP stcp = new TCP(port, c);
-        stcp.travail();
+
+        //TCP
+        //TCP stcp = new TCP(port, c);
+        //stcp.travail();
+
+        //UDP
+        UDP sUdp = new UDP(port,c);
+        sUdp.travailUDP();
 
     }
 }

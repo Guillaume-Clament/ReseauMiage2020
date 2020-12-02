@@ -4,10 +4,10 @@ import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.net.Socket;
 
-public class TravailClient {
+public class TravailClientTCP {
     private int port;
 
-    public TravailClient(int port) {
+    public TravailClientTCP(int port) {
         this.port = port;
     }
 
