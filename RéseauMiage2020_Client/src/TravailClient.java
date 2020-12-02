@@ -18,7 +18,7 @@ public class TravailClient {
             try {
                 BufferedReader entreeSocket = new BufferedReader((new InputStreamReader(socket.getInputStream())));
                 PrintStream sortieSorcket = new PrintStream(socket.getOutputStream());
-                sortieSorcket.println("ADD toto titi");
+                sortieSorcket.println("CHK Toto Toto");
                 String reponse = entreeSocket.readLine();
                 System.out.println("Réponse = " + reponse);
             } catch (IOException e) {
