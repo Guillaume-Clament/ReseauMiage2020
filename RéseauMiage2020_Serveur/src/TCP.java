@@ -1,12 +1,8 @@
 //gestion de la communication
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintStream;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.PriorityQueue;
 
 public class TCP {
     private int port;
@@ -29,16 +25,9 @@ public class TCP {
                 Socket sService = sEcoute.accept();
 
                 //Gestion du client - gestion des threads
-                try {
-                    BufferedReader entreeSocket = new BufferedReader((new InputStreamReader(sService.getInputStream())));
-                    PrintStream sortieSorcket = new PrintStream(sService.getOutputStream());
-                    String requete = entreeSocket.readLine();
-                    String reponse = comprehension.traiter(requete);
-                    sortieSorcket.println(reponse);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                sService.close();
+                GererClientTCP gc = new GererClientTCP(sService);
+                Thread t = new Thread(gc);
+                t.start();
             }
         } catch (IOException e) {
             e.printStackTrace();

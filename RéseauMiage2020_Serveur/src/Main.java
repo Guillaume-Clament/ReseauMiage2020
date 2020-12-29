@@ -5,12 +5,13 @@ public class Main {
         int port = 28414;
 
         //TCP
-        //TCP stcp = new TCP(port, c);
-        //stcp.travail();
+        TCP stcp = new TCP(port, c);
+        stcp.travail();
 
         //UDP
         UDP sUdp = new UDP(port,c);
         sUdp.travailUDP();
+
 
     }
 }
