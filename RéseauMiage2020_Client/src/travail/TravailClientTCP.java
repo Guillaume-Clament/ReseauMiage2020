@@ -1,4 +1,4 @@
-package travailClient;
+package travail;
 
 import java.io.BufferedReader;
 import java.io.IOException;

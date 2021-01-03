@@ -1,4 +1,4 @@
-package travailClient;
+package travail;
 
 public abstract class TravailClient {
     abstract void travail(String message);

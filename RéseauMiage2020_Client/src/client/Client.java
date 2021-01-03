@@ -1,6 +1,6 @@
 package client;
 
-import travailClient.TravailClient;
+import travail.TravailClient;
 
 public abstract class Client {
     public static int portChecker = 28414;

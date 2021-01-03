@@ -1,3 +1,6 @@
+package serveur;
+
+import metier.Comprehension;
 
 import java.io.IOException;
 import java.net.DatagramPacket;
@@ -19,7 +22,7 @@ public class UDP implements Runnable{
             DatagramSocket s = new DatagramSocket(this.port);
 
             // définition du buffer pour stocker le flux
-            byte[] buffer = new byte[1024]; // ne pas dépasser la tail max d'un paquet UDP, 64ko - toute les entêtes (tcp 16) (udp 8 octet)
+            byte[] buffer = new byte[1024]; // ne pas dépasser la tail max d'un paquet GererClient.UDP, 64ko - toute les entêtes (tcp 16) (udp 8 octet)
             //
             /**
              * Param 1 : le buffer
@@ -27,7 +30,7 @@ public class UDP implements Runnable{
              */
             DatagramPacket dp = new DatagramPacket(buffer, buffer.length);
 
-            System.out.println("[UDP] Running server on port " + this.port + "...");
+            System.out.println("[GererClient.UDP] Running server on port " + this.port + "...");
 
             while (true) {
                 s.receive(dp);
@@ -38,7 +41,7 @@ public class UDP implements Runnable{
                 String messageRecu = new String(dp.getData(), 0, dp.getLength());
 
                 //affichage Métier
-                System.out.println("[UDP] messageRecu= " + messageRecu + "\n"
+                System.out.println("[GererClient.UDP] messageRecu= " + messageRecu + "\n"
                         + "numéro de port " + portEmetteur + "\n"
                         + "Adresse IP " + ipEmetteur + "\n");
 

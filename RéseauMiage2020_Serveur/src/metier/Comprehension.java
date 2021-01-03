@@ -1,4 +1,4 @@
-import javax.swing.*;
+package metier;
 
 public class Comprehension {
 

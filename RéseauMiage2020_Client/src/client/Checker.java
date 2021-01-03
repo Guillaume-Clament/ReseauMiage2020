@@ -1,7 +1,7 @@
 package client;
 
-import travailClient.TravailClientTCP;
-import travailClient.TravailClientUDP;
+import travail.TravailClientTCP;
+import travail.TravailClientUDP;
 
 public class Checker extends Client{
 

@@ -1,6 +1,6 @@
 package client;
 
-import travailClient.TravailClientTCP;
+import travail.TravailClientTCP;
 
 public class Manager extends Client {
     public Manager(String nom) {

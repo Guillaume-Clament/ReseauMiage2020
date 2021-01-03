@@ -1,42 +1,41 @@
-//gestion de la communication
+package serveur;
 
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-public class TCP implements Runnable{
+public class Log implements Runnable {
     private int port;
-    private Comprehension comprehension;
 
-    public TCP(int port, Comprehension comprehension) {
+    public Log(int port) {
         this.port = port;
-        this.comprehension = comprehension;
     }
 
-    //TODO n°5: vérifier les messages d'erreur des try catch
 
+    @Override
     public void run() {
         try {
-            //ouverture du service
             ServerSocket sEcoute = new ServerSocket(port);
-
-            System.out.println("[TCP] Start server on port " + this.port + "...");
+            System.out.println("[Log] Start server on port " + this.port + "...");
 
             while (true) {
                 //écoute du client
                 Socket sService = sEcoute.accept();
 
                 //affichage Métier
-                System.out.println("[TCP] Receive message");
+                System.out.println("[Log] Receive Log");
 
                 //Gestion du client - gestion des threads
-                GererClientTCP gc = new GererClientTCP(sService,comprehension);
-                Thread t = new Thread(gc);
+                GererLog gl = new GererLog(sService);
+                Thread t = new Thread(gl);
                 t.start();
             }
+
+
         } catch (IOException e) {
             e.printStackTrace();
         }
+
 
 
     }
