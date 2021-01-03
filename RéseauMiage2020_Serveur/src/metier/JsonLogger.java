@@ -90,7 +90,6 @@ public class JsonLogger {
                 for(int i = 0; i < old.size(); i++) {
                     builder.add(old.get(i));
                 }
-                builder.
 
                 jr.close();
                 fi.close();
