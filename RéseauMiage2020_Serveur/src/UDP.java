@@ -4,7 +4,7 @@ import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
 
-public class UDP {
+public class UDP implements Runnable{
     private int port;
     private Comprehension comprehension;
 
@@ -13,11 +13,10 @@ public class UDP {
         this.comprehension = comprehension;
     }
 
-     public void travailUDP() {
-         System.out.println("hey2");
+     public void run() {
         try {
 
-            DatagramSocket s = new DatagramSocket(28414);
+            DatagramSocket s = new DatagramSocket(this.port);
 
             // définition du buffer pour stocker le flux
             byte[] buffer = new byte[1024]; // ne pas dépasser la tail max d'un paquet UDP, 64ko - toute les entêtes (tcp 16) (udp 8 octet)
@@ -28,8 +27,9 @@ public class UDP {
              */
             DatagramPacket dp = new DatagramPacket(buffer, buffer.length);
 
+            System.out.println("[UDP] Running server on port " + this.port + "...");
+
             while (true) {
-                System.out.println("hey");
                 s.receive(dp);
 
                 //extraction des données
@@ -38,7 +38,7 @@ public class UDP {
                 String messageRecu = new String(dp.getData(), 0, dp.getLength());
 
                 //affichage Métier
-                System.out.println("messageRecu= " + messageRecu + "\n"
+                System.out.println("[UDP] messageRecu= " + messageRecu + "\n"
                         + "numéro de port " + portEmetteur + "\n"
                         + "Adresse IP " + ipEmetteur + "\n");
 

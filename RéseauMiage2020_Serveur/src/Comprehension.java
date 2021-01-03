@@ -36,10 +36,7 @@ public class Comprehension {
             case "ADD":{
                 boolean retourmetier = metier1.creer(login, password);
                 if (retourmetier == true){
-                    reponse = "Good" ;
-                }
-                else {
-                    reponse = "Bad";
+                    reponse = "DONE" ;
                 }
             }
             break;
@@ -47,10 +44,7 @@ public class Comprehension {
             case "DEL":{
                 boolean retourmetier = metier1.supprimer(login, password);
                 if (retourmetier == true){
-                    reponse = "Good" ;
-                }
-                else {
-                    reponse = "Bad";
+                    reponse = "DONE" ;
                 }
             }
             break;
@@ -58,10 +52,7 @@ public class Comprehension {
             case "MOD":{
                 boolean retourmetier = metier1.mettreAJour(login, password);
                 if (retourmetier == true){
-                    reponse = "Good" ;
-                }
-                else {
-                    reponse = "Bad";
+                    reponse = "DONE" ;
                 }
             }
             break;

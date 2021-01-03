@@ -17,13 +17,14 @@ public class GererClientUDP implements Runnable{
         this.dp = dp;
         this.messageRecu = messageRecu;
         this.comprehension = comprehension;
-
     }
 
     public void run(){
 
         String reponse = comprehension.traiter(messageRecu);
+
         dp.setData(reponse.getBytes()); // point sur un autre tableau un fois midifié
+
         try {
             s.send(dp);
         } catch (IOException e) {
@@ -32,6 +33,4 @@ public class GererClientUDP implements Runnable{
 
         dp.setData(buffer); // permet de ré init la taille
     }
-
-
 }

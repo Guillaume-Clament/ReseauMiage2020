@@ -1,11 +1,21 @@
+import client.Checker;
+import client.Manager;
+
 public class MainClient {
     public static void main(String[] args) {
-        int port = 28414;
-        //TravailClientTCP tc = new TravailClientTCP(port);
-        //tc.travail();
+        Checker checkUDP = new Checker("CheckUDP", true);
+        Checker checkTCP = new Checker("CheckTCP", false);
+        Manager manager = new Manager("client.Manager");
 
-        TravailClientUDP tUdp = new TravailClientUDP();
-        tUdp.travailUDP();
+        checkTCP.check("Toto", "Toto");
+        checkUDP.check("Toto", "Toto");
 
+        manager.check("Toto", "Toto");
+        manager.add("blah", "blah");
+        manager.check("blah", "blah");
+        manager.update("blah", "blah2");
+        manager.check("blah", "blah2");
+        manager.delete("blah", "blah2");
+        manager.check("blah", "blah2");
     }
 }
