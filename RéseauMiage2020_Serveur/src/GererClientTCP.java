@@ -7,12 +7,12 @@ import java.net.Socket;
 public class GererClientTCP implements Runnable{
     private Socket sService;
     private Comprehension comprehension;
-    private String messageRecu;
 
 
-    public GererClientTCP(Socket sService) {
+    public GererClientTCP(Socket sService,Comprehension comprehension) {
         super();
         this.sService = sService;
+        this.comprehension = comprehension;
     }
 
 

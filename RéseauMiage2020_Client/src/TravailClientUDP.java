@@ -21,6 +21,7 @@ public class TravailClientUDP {
 
             //envois
             s.send(dp);
+            System.out.println("hey");
 
             s.receive(dpReception);
             //réception du message

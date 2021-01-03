@@ -14,8 +14,9 @@ public class UDP {
     }
 
      public void travailUDP() {
-
+         System.out.println("hey2");
         try {
+
             DatagramSocket s = new DatagramSocket(28414);
 
             // définition du buffer pour stocker le flux
@@ -28,6 +29,7 @@ public class UDP {
             DatagramPacket dp = new DatagramPacket(buffer, buffer.length);
 
             while (true) {
+                System.out.println("hey");
                 s.receive(dp);
 
                 //extraction des données
@@ -41,7 +43,7 @@ public class UDP {
                         + "Adresse IP " + ipEmetteur + "\n");
 
                 //Gestion du client - gestion des threads
-                GererClientUDP gc = new GererClientUDP(dp, messageRecu, s);
+                GererClientUDP gc = new GererClientUDP(dp, messageRecu, s, comprehension);
                 Thread t = new Thread(gc);
                 t.start();
             }

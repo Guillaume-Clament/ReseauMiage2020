@@ -25,7 +25,7 @@ public class TCP {
                 Socket sService = sEcoute.accept();
 
                 //Gestion du client - gestion des threads
-                GererClientTCP gc = new GererClientTCP(sService);
+                GererClientTCP gc = new GererClientTCP(sService,comprehension);
                 Thread t = new Thread(gc);
                 t.start();
             }

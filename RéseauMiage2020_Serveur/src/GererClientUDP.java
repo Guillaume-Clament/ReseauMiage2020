@@ -11,11 +11,12 @@ public class GererClientUDP implements Runnable{
     byte[] buffer = new byte[1024];
     DatagramSocket s;
 
-    public GererClientUDP(DatagramPacket dp, String messageRecu, DatagramSocket s) {
+    public GererClientUDP(DatagramPacket dp, String messageRecu, DatagramSocket s, Comprehension comprehension) {
         super();
         this.s = s;
         this.dp = dp;
-        this.messageRecu= messageRecu;
+        this.messageRecu = messageRecu;
+        this.comprehension = comprehension;
 
     }
 
