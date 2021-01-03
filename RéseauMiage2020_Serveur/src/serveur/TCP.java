@@ -22,14 +22,14 @@ public class TCP implements Runnable{
             //ouverture du service
             ServerSocket sEcoute = new ServerSocket(port);
 
-            System.out.println("[GererClient.TCP] Start server on port " + this.port + "...");
+            System.out.println("[TCP] Start server on port " + this.port + "...");
 
             while (true) {
                 //écoute du client
                 Socket sService = sEcoute.accept();
 
                 //affichage Métier
-                System.out.println("[GererClient.TCP] Receive message");
+                System.out.println("[TCP] Receive message");
 
                 //Gestion du client - gestion des threads
                 GererClientTCP gc = new GererClientTCP(sService,comprehension);

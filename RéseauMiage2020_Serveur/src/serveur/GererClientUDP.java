@@ -40,7 +40,7 @@ public class GererClientUDP implements Runnable{
         } catch (IOException e) {
             e.printStackTrace();
         }
-        LogBuilder.envoyerLog(messageRecu,reponse, s.getPort(),s.getInetAddress().getHostAddress(),"UDP");
+        LogBuilder.envoyerLog(messageRecu, reponse, s.getPort(), s.getInetAddress().getHostAddress(),"UDP");
         dp.setData(buffer); // permet de ré init la taille
     }
 }

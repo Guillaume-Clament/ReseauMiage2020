@@ -1,17 +1,11 @@
 package metier;
 
-import javax.json.Json;
-import javax.json.JsonObject;
-import javax.json.JsonObjectBuilder;
-import javax.json.JsonReader;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+import javax.json.*;
+import java.io.*;
 import java.util.Date;
 
 public class JsonLogger {
-    // Attributs à compléter
-
+    String path = "logs.json";
 
     /**
      * Constructeur à compléter
@@ -71,15 +65,51 @@ public class JsonLogger {
      * @param login login utilisé
      * @param result résultat de l'opération
      */
-    public static void log(String host, int port, String proto, String type, String login, String result) throws IOException {
+    public static void log(String host, int port, String proto, String type, String login, String result) {
         JsonLogger logger = getLogger();
-        // à compléter
-        FileReader fr = new FileReader("log.json");
-        JsonReader jr = new JsonReader(fr);
-        FileWriter file = new FileWriter("log.json");
+        try {
+            File file = new File(logger.path);
+            if(!file.exists()) {
+                try {
+                    file.createNewFile();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
 
+            }
 
+            JsonArrayBuilder builder = Json.createArrayBuilder();
 
+            if(file.length() > 0) {
+                // read old content
+                FileInputStream fi = new FileInputStream(file);
+
+                JsonReader jr = Json.createReader(fi);
+
+                JsonArray old = jr.readArray();
+                for(int i = 0; i < old.size(); i++) {
+                    builder.add(old.get(i));
+                }
+                builder.
+
+                jr.close();
+                fi.close();
+            }
+
+            // add new content
+            builder.add(logger.reqToJson(host, port, proto, type, login, result));
+
+            // write new content
+            FileOutputStream fr = new FileOutputStream(file);
+            JsonWriter jw = Json.createWriter(fr);
+
+            jw.writeArray(builder.build());
+
+            jw.close();
+            fr.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 }
