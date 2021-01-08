@@ -1,6 +1,7 @@
 package serveur;
 
 import metier.Comprehension;
+import metier.LogBuilder;
 
 import java.io.IOException;
 import java.net.DatagramPacket;
@@ -33,6 +34,7 @@ public class UDP implements Runnable{
             System.out.println("[UDP] Running server on port " + this.port + "...");
 
             while (true) {
+                // blocage lors de la première instance
                 s.receive(dp);
 
                 //extraction des données
@@ -46,9 +48,20 @@ public class UDP implements Runnable{
                         + "Adresse IP " + ipEmetteur + "\n");
 
                 //Gestion du client - gestion des threads
-                GererClientUDP gc = new GererClientUDP(dp, messageRecu, s, comprehension);
-                Thread t = new Thread(gc);
-                t.start();
+
+                String reponse = comprehension.traiter(messageRecu);
+
+                dp.setData(reponse.getBytes()); // point sur un autre tableau un fois midifié
+
+                //envoyer la requete au serveur de log
+                try {
+                    s.send(dp);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                LogBuilder.envoyerLog(messageRecu, reponse, s.getPort(), s.getInetAddress().getHostAddress(),"UDP");
+                dp.setData(buffer); // permet de ré init la taille
+
             }
         } catch (IOException e) {
             e.printStackTrace();
