@@ -23,6 +23,7 @@ public class LogBuilder {
             }
             socket.close();
         } catch (IOException e) {
+            System.out.println("YOLO");
             e.printStackTrace();
         }
 

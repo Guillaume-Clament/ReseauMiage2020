@@ -35,6 +35,7 @@ public class TCP implements Runnable{
                 GererClientTCP gc = new GererClientTCP(sService,comprehension);
                 Thread t = new Thread(gc);
                 t.start();
+
             }
         } catch (IOException e) {
             e.printStackTrace();

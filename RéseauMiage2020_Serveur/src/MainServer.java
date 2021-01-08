@@ -18,7 +18,6 @@ public class MainServer {
         Thread tcpServerM = new Thread(stcpM);
         tcpServerM.start();
 
-
         //Client.UDP
         UDP sUdp = new UDP(28414,c);
         Thread udpServer = new Thread(sUdp);

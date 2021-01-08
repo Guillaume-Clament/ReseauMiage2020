@@ -56,7 +56,9 @@ public class UDP implements Runnable{
                 //envoyer la requete au serveur de log
                 try {
                     s.send(dp);
+
                 } catch (IOException e) {
+
                     e.printStackTrace();
                 }
                 LogBuilder.envoyerLog(messageRecu, reponse, s.getPort(), s.getInetAddress().getHostAddress(),"UDP");
@@ -64,7 +66,12 @@ public class UDP implements Runnable{
 
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            if(e!= null){
+                e.printStackTrace();
+            }else{
+                System.out.println("NOOOOOOOO");
+            }
+
         }
 
 
