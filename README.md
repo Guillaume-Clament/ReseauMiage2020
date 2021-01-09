@@ -17,6 +17,8 @@ Lancer en premier le "main" du serveur qui se trouve dans le sous projet Réseau
 Par la suite lancer le client depuis le "main" qui se trouve dans RéseauMiage2020_Client.
 * MainClient
 
+__Plusieurs__ versions du projet sont disponibles dans les branches
+
 ## 4) consultation des logs:
 
 Dans la racine du projet il y a un fichier de log "logs.json" ou nous pouvons consulter les échanges entre le serveur et client.
@@ -48,6 +50,8 @@ Supression d'un couple login password
 
 Modification d'un password par un manager
 ![DESCRIPTION DE L'IMAGE](https://zupimages.net/up/21/01/r3jn.jpg)
+
+
 
 ## Bugs:
 Au lancement du projet il y a un nullPointeur sur une exception (en UDP), en mode débug elle n'apparait pas forcément.
