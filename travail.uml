@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>travail</OriginalElement>
+  <nodes>
+    <node x="92.0" y="0.0">travail.TravailClient</node>
+    <node x="0.0" y="192.0">travail.TravailClientTCP</node>
+    <node x="196.0" y="192.0">travail.TravailClientUDP</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="travail.TravailClientTCP" target="travail.TravailClient">
+      <point x="0.0" y="-50.0" />
+      <point x="88.0" y="167.0" />
+      <point x="139.0" y="167.0" />
+      <point x="-47.0" y="71.0" />
+    </edge>
+    <edge source="travail.TravailClientUDP" target="travail.TravailClient">
+      <point x="0.0" y="-50.0" />
+      <point x="284.0" y="167.0" />
+      <point x="233.0" y="167.0" />
+      <point x="47.0" y="71.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="186.0" y="55.0" />
+  <SelectedNodes>
+    <node>travail.TravailClient</node>
+    <node>travail.TravailClientTCP</node>
+    <node>travail.TravailClientUDP</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

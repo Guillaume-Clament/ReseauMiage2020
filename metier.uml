@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>metier</OriginalElement>
+  <nodes>
+    <node x="286.0" y="0.0">metier.Metier1</node>
+    <node x="0.0" y="0.0">metier.Metier</node>
+    <node x="0.0" y="453.0">metier.JsonLogger</node>
+    <node x="0.0" y="664.0">metier.LogBuilder</node>
+    <node x="415.0" y="453.0">metier.Comprehension</node>
+  </nodes>
+  <notes />
+  <edges />
+  <settings layout="Hierarchic Group" zoom="1.0" x="122.5" y="294.0" />
+  <SelectedNodes>
+    <node>metier.Metier1</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
