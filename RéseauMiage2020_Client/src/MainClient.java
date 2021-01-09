@@ -8,7 +8,7 @@ public class MainClient {
         Manager manager = new Manager("client.Manager");
 
         checkTCP.check("Toto", "Toto");
-        checkUDP.check("Toto", "Toto");
+
 
         manager.check("Toto", "Toto");
         manager.add("blah", "blah");
@@ -16,6 +16,11 @@ public class MainClient {
         manager.update("blah", "blah2");
         manager.check("blah", "blah2");
         manager.delete("blah", "blah2");
+        manager.add("blah2", "blah");
+        manager.add("blah2", "blah");
         manager.check("blah", "blah2");
+
+
+        checkUDP.check("Toto", "Toto");
     }
 }
