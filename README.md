@@ -11,7 +11,11 @@
 
 ## 3) lancement du projet :
 
-Lancer en premier le main du serveur qui se trouve dans le sous projet RéseauMiage2020_Serveur , par la suite lancer le client depuis le main qui se trouve dans RéseauMiage2020_Client
+Lancer en premier le "main" du serveur qui se trouve dans le sous projet RéseauMiage2020_Serveur.
+* MainServer
+
+Par la suite lancer le client depuis le "main" qui se trouve dans RéseauMiage2020_Client.
+* MainClient
 
 ## 4) consultation des logs:
 
@@ -26,11 +30,7 @@ A la racine du projet se trouve les fichiers suivants:
 * serveur.uml
 * travail.uml
 
-
-
-
-
-ils sont consultable depuis intelliJ et approte une connaissance sur la structure des classes JAVA au sein du projet
+ils sont consultables depuis intelliJ et approtent une connaissance sur la structure des classes JAVA au sein du projet
 
 ### 5.1) USE CASE
 ![DESCRIPTION DE L'IMAGE](https://zupimages.net/up/21/01/hlhh.jpg)
